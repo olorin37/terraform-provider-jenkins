@@ -4,12 +4,12 @@ import (
 	"github.com/hashicorp/terraform/helper/schema"
 )
 
-func resourceServer() *schema.Resource {
+func resourceSlave() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceServerCreate,
-		Read:   resourceServerRead,
-		Update: resourceServerUpdate,
-		Delete: resourceServerDelete,
+		Create: resourceSlaveCreate,
+		Read:   resourceSlaveRead,
+		Update: resourceSlaveUpdate,
+		Delete: resourceSlaveDelete,
 
 		Schema: map[string]*schema.Schema{
 			"address": &schema.Schema{
@@ -20,20 +20,20 @@ func resourceServer() *schema.Resource {
 	}
 }
 
-func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
+func resourceSlaveCreate(d *schema.ResourceData, m interface{}) error {
 	address := d.Get("address").(string)
 	d.SetId(address)
 	return nil
 }
 
-func resourceServerRead(d *schema.ResourceData, m interface{}) error {
+func resourceSlaveRead(d *schema.ResourceData, m interface{}) error {
 	return nil
 }
 
-func resourceServerUpdate(d *schema.ResourceData, m interface{}) error {
+func resourceSlaveUpdate(d *schema.ResourceData, m interface{}) error {
 	return nil
 }
 
-func resourceServerDelete(d *schema.ResourceData, m interface{}) error {
+func resourceSlaveDelete(d *schema.ResourceData, m interface{}) error {
 	return nil
 }
